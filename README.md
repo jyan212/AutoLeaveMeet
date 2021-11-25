@@ -5,7 +5,6 @@ Automatically leave a Google meet when a certain threshold (number of participan
 
 Do you have a lot of Google meetings that keep getting in the way?
 Now you can unwind and let this extension run an unimportant Google meeting on its own without having to worry!
-Automatically leave a Google Meet when a certain threshold of participants that left the meeting within 12 seconds.
 
 Where? 
 - Works for online class in Google Meet
