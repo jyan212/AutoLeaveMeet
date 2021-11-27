@@ -1,6 +1,8 @@
-# AutoLeaveMeet
+# AutoLeaveMeet - Google Meet Auto Leaver
 ![alt text](https://github.com/jyan212/AutoLeaveMeet/blob/master/img/alm-128.png)
 
+Now is available on Chrome Web Store! 
+Extension Link: https://chrome.google.com/webstore/detail/autoleavemeet/bpabhlgoefeojkcffghdonocpgdifbop
 Automatically leave Google meet when a certain threshold (number of participants leave within 12 seconds) is met！
 
 Do you have a lot of Google meetings that keep getting in the way?
