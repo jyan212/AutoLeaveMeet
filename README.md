@@ -18,6 +18,7 @@ Two simple step!
 - Click on Set
 
 Sit Back, Relax And you're done!
+Cancel anytime by refreshing the selected tab/page!
 
 ![alt text](https://github.com/jyan212/AutoLeaveMeet/blob/master/img/alm-screenshot.png?raw=true)
 
@@ -30,3 +31,4 @@ Reminder: This application still in testing, please use it at your own risk!
 - 3) Enable developer mode
 - 4) Load unpacked and upload the downloaded folder
 - 5) Enable this extension, and you're done!
+
