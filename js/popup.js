@@ -1,3 +1,6 @@
+const meetRegex = /https?:\/\/meet.google.com\/\w{3}-\w{4}-\w{3}/
+const webexRegex = /https?:\/\/.{1,15}.webex.com\/.{20,300}/
+
 window.onload = function() {
     chrome.storage.local.get(['alm-threshold', 'alm-current-tab'], function(res) {
         if( typeof res !== 'undefined') {
@@ -19,17 +22,25 @@ function setAutoLeave() {
 
             if(response == "error") {
                 const display = document.getElementById("activeTabName")
-                display.innerHTML = "Please make sure you are in a Google Meet tab"
+                display.innerHTML = "Please make sure you are in a Google Meet or WebEx tab"
                 display.style.color = "red"
                 display.textAlign = "centre"
             }
 
             if(response != "error" && typeof response !== 'undefined') {
                 const display = document.getElementById("activeTabName")
-                display.innerHTML = "Active meet: "+ response.target + ", threshold: " + response.threshold
-                display.style.color = "green"
-                display.textAlign = "centre"
+                if (meetRegex.test(response.target)) {
+                    display.innerHTML = "Active meet: "+ response.target + ", threshold: " + response.threshold
+                    display.style.color = "green"
+                    display.textAlign = "centre"
+                } 
 
+                if (webexRegex.test(response.target)) {
+                    display.innerHTML = "Active webex: "+ response.target + ", threshold: " + response.threshold
+                    display.style.color = "green"
+                    display.textAlign = "centre"
+                }
+                
                 chrome.storage.local.set({'alm-threshold': response.threshold}, function() {
                     console.log('setted')
                 })

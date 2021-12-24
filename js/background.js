@@ -3,7 +3,7 @@
 const meetTabs = new Map()
 const meetRegex = /https?:\/\/meet.google.com\/\w{3}-\w{4}-\w{3}/
 const codeRegex = /\w{3}-\w{4}-\w{3}/
-var res = ""
+var res = "error"
 var currentTabId;
 
 function processPopUpMessage(request, sender, sendResponse) {
@@ -17,12 +17,10 @@ function processPopUpMessage(request, sender, sendResponse) {
                 currentTabId = tab[0].id
                 chrome.scripting.executeScript({
                     target: {tabId: tab[0].id},
-                    files: ["./js/content.js"]
+                    files: ["./js/googlemeet.js"]
                 });
                 res = {target: tab[0].url, threshold: request.threshold}
-            } else {
-                res = "error"
-            }
+            } 
             sendResponse(res);
         })
         return true;

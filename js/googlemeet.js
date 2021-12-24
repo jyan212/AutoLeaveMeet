@@ -47,7 +47,13 @@ if (document.getElementsByClassName('uGOf1d').length <= 0) {
                     /*
                         assume user is not a host
                     */
-                    document.querySelector('i.google-material-icons.VfPpkd-kBDsod.r8Sq3').click()
+                    let a = document.getElementsByTagName('i')
+
+                    for ( i of a ) {
+                        if ( i.innerHTML == 'call_end') {
+                            i.click()
+                        }
+                    }
                     console.log("user left the call")
                     clearInterval(update)
                 } 
